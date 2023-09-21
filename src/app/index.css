@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "PT Sans";
+  src: local("PT Sans"), local("PTSans-Regular"),
+    url("../assets/fonts/PTSans-Regular.woff2") format("woff2"),
+    url("../assets/fonts/PTSans-Regular.woff") format("woff"),
+    url("../assets/fonts/PTSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: local("PT Sans Bold"), local("PTSans-Bold"),
+    url("../assets/fonts/PTSans-Bold.woff2") format("woff2"),
+    url("../assets/fonts/PTSans-Bold.woff") format("woff"),
+    url("../assets/fonts/PTSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-weight: 400;
+  font-family: "PT Sans";
+  font-size: 16px;
+  line-height: 120%;
+  width: 100%;
+  margin: 0 auto;
+  background: #faf8f5;
+  background: linear-gradient(90deg, #ceeaf5, #efefef);
+  color: #192040;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1450px;
+  width: 100%;
+}
+
+.icon {
+  height: 20px;
+}
+
+.icon-white {
+  fill: #fff;
+}
+.icon-dark {
+  fill: #192040;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,16 @@
+.header {
+  flex: 0 0 auto;
+  background-color: #0087c9;
+  color: #fff;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  gap: 30px;
+  font-size: 1.3em;
+}
+.header .icon {
+  transform: rotate(-30deg);
+}

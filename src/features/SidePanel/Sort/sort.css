@@ -1,0 +1,10 @@
+.sort {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sort input,
+.sort label {
+  cursor: pointer;
+}

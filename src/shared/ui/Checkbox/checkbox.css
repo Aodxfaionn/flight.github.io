@@ -1,0 +1,28 @@
+.checkbox{
+  position: relative;
+}
+.checkbox input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 15px;
+  height: 15px;
+}
+.checkbox input + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+.checkbox input + label::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #08088e;
+  border-radius: 5px;
+  margin-right: 0.5em;
+}
+.checkbox input:checked + label::before {
+  background: #08088e;
+}

@@ -1,0 +1,28 @@
+.radioBtn {
+  position: relative;
+}
+.radioBtn input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 15px;
+  height: 15px;
+}
+.radioBtn input + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+.radioBtn input + label::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #08088e;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+.radioBtn input:checked + label::before {
+  background: #08088e;
+}

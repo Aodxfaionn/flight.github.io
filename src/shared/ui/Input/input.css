@@ -1,0 +1,31 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #11468f inset !important;
+  -webkit-text-fill-color: #fff !important;
+}
+.input input {
+  width: 80%;
+  background: #ceeaf5;
+  border: 1px solid #08088e;
+  border-radius: 5px;
+  margin: 10px 0 0 10px;
+  padding: 5px;
+}
+.input input::placeholder,
+.input input:focus {
+  background: #ceeaf5;
+  border: 1px solid #08088e;
+  outline: 0;
+}
+.input input::-moz-placeholder {
+  background: #ceeaf5;
+  border: 1px solid #08088e;
+  outline: 0;
+}
+.input input::-ms-placeholder {
+  background: #ceeaf5;
+  border: 1px solid #08088e;
+  outline: 0;
+}
