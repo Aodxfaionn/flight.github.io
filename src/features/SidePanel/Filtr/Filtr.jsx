@@ -5,8 +5,8 @@ import { Checkbox } from "../../../shared/ui/Checkbox/Checkbox";
 function Filtr() {
   return (
     <>
-      <p class="panelChoose__name">Фильтровать</p>
-      <div class="filtr">
+      <p className="panelChoose__name">Фильтровать</p>
+      <div className="filtr">
         <Checkbox
           id="without"
           name="without"

@@ -1,0 +1,95 @@
+.flightList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.flight {
+  margin-bottom: 30px;
+}
+.flight__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 15px 30px;
+  background-color: #0087c9;
+  color: #fff;
+}
+.flight__aviaCompany,
+.flight__price {
+  font-weight: 700;
+  font-size: 20px;
+}
+.flight__price {
+  text-align: right;
+}
+.flight__info {
+  font-size: 14px;
+}
+.forward {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 30px;
+  border-bottom: 2px solid #0087c9;
+}
+.back {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 30px;
+}
+.direction {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #b9d0db;
+}
+.blue {
+  color: #0087c9;
+}
+.direction-abr {
+  text-transform: uppercase;
+}
+.direction__arrow {
+  font-size: 20px;
+}
+.transfer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #ffb168;
+}
+.transfer::before,
+.transfer::after {
+  content: "";
+  width: 42%;
+  height: 0;
+  border-bottom: 1px solid #7b868b;
+}
+.transfer-empty {
+  border-bottom: 1px solid #7b868b;
+}
+.time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.time__time {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.time .blue {
+  font-size: 14px;
+}
+button.btn-more {
+  width: 30%;
+  margin: 0 auto;
+  background-color: #0087c9;
+  font-size: 16px;
+  text-transform: inherit;
+}

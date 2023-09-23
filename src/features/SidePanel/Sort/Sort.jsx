@@ -5,8 +5,8 @@ import { RadioButton } from "../../../shared/ui/RadioButton/RadioButton";
 function Sort() {
   return (
     <>
-      <p class="panelChoose__name">Сортировать</p>
-      <div class="sort">
+      <p className="panelChoose__name">Сортировать</p>
+      <div className="sort">
         <RadioButton
           id="upPrice"
           name="sortList"
