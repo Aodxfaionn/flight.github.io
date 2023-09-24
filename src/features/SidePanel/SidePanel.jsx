@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sidePanel.css";
 import Sort from "./Sort/Sort";
 import Filtr from "./Filtr/Filtr";
 import Price from "./Price/Price";
-import AviaCompany from "./AviaCompany/Aviacompany";
+import AviaCompany from "./AviaCompany/ui/Aviacompany";
 
 function SidePanel() {
   return (

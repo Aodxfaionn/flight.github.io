@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./flightList.css";
 import { Button } from "../../../shared/ui/Button/Button";
 import data from "../../../app/flights.json";
+import { useLoadArray } from "../lib/useLoadArray";
 
 function FlightList() {
-  const flights = data.result.flights;
+  const [transformArray, showElem] = useLoadArray(data.result.flights, 10);
   return (
     <div className="flightList">
       <div className="flightList">
-        {flights.map((flight, num) => (
+        {transformArray.map((flight, num) => (
           <div key={num} className="flight">
             <div className="flight__header">
               <div className="flight__aviaCompany">
@@ -34,14 +35,16 @@ function FlightList() {
                     &nbsp;
                   </span>
                   <span className="blue direction-abr">
-                    {flight.flight.legs[0].segments[0].departureAirport.uid}&nbsp;
+                    {flight.flight.legs[0].segments[0].departureAirport.uid}
+                    &nbsp;
                   </span>
                   <span className="blue direction__arrow">&#8594;</span>
                   <span>
                     &nbsp;
                     {flight.flight.legs[0].segments[1]
                       ? flight.flight.legs[0].segments[1].arrivalAirport.caption
-                      : flight.flight.legs[0].segments[0].arrivalAirport.caption}
+                      : flight.flight.legs[0].segments[0].arrivalAirport
+                          .caption}
                   </span>
                   <span className="blue direction-abr">
                     &nbsp;
@@ -136,14 +139,16 @@ function FlightList() {
                     ,&nbsp;
                   </span>
                   <span className="blue direction-abr">
-                    {flight.flight.legs[1].segments[0].departureAirport.uid}&nbsp;
+                    {flight.flight.legs[1].segments[0].departureAirport.uid}
+                    &nbsp;
                   </span>
                   <span className="blue direction__arrow">&#8594;</span>
                   <span>
                     &nbsp;
                     {flight.flight.legs[1].segments[1]
                       ? flight.flight.legs[1].segments[1].arrivalAirport.caption
-                      : flight.flight.legs[1].segments[0].arrivalAirport.caption}
+                      : flight.flight.legs[1].segments[0].arrivalAirport
+                          .caption}
                   </span>
                   <span className="blue direction-abr">
                     &nbsp;
@@ -236,7 +241,7 @@ function FlightList() {
           </div>
         ))}
       </div>
-      <Button text="Показать еще" style="btn-more" />
+      <Button text="Показать еще" style="btn-more" onClick={() => showElem()} />
     </div>
   );
 }
