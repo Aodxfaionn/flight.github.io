@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/flight.github.io/static/css/main.ebc98af5.css",
+    "main.js": "/flight.github.io/static/js/main.a0fd2cf8.js",
+    "static/media/PTSans-Bold.ttf": "/flight.github.io/static/media/PTSans-Bold.28b2b29ca47a68fa3d2b.ttf",
+    "static/media/PTSans-Regular.ttf": "/flight.github.io/static/media/PTSans-Regular.88f117a8185be79387cb.ttf",
+    "static/media/PTSans-Bold.woff": "/flight.github.io/static/media/PTSans-Bold.152938846482bd1aac9c.woff",
+    "static/media/PTSans-Regular.woff": "/flight.github.io/static/media/PTSans-Regular.2097cef5a78d44d77e0c.woff",
+    "static/media/PTSans-Bold.woff2": "/flight.github.io/static/media/PTSans-Bold.06d52638af3e838cb671.woff2",
+    "static/media/PTSans-Regular.woff2": "/flight.github.io/static/media/PTSans-Regular.ac2960c569798492ef61.woff2",
+    "index.html": "/flight.github.io/index.html",
+    "main.ebc98af5.css.map": "/flight.github.io/static/css/main.ebc98af5.css.map",
+    "main.a0fd2cf8.js.map": "/flight.github.io/static/js/main.a0fd2cf8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ebc98af5.css",
+    "static/js/main.a0fd2cf8.js"
+  ]
+}
