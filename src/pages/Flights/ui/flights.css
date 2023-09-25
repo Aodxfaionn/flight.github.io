@@ -5,3 +5,16 @@
   gap: 30px;
   padding: 50px;
 }
+@media (max-width: 1000px) {
+  .flights {
+    padding: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .flights {
+    flex-direction: column;
+  }
+  .flight__flight {
+    text-align: right;
+  }
+}

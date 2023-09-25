@@ -1,11 +1,18 @@
 import React from "react";
 import "./flightList.css";
 import { Button } from "../../../shared/ui/Button/Button";
-import data from "../../../app/flights.json";
 import { useLoadArray } from "../lib/useLoadArray";
 
-function FlightList() {
-  const [transformArray, showElem] = useLoadArray(data.result.flights, 10);
+function FlightList({ list }) {
+  const [transformArray, showElem] = useLoadArray(list, 10);
+  function getTime(arrival, departure) {
+    const ms = Math.floor(
+      new Date(arrival).getTime() - new Date(departure).getTime()
+    );
+    const hours = Math.floor(ms / (1000 * 60 * 60).toFixed(2));
+    const minutes = Math.floor(ms / (1000 * 60)) - hours * 60;
+    return `${hours} ч ${minutes} мин`;
+  }
   return (
     <div className="flightList">
       <div className="flightList">
@@ -74,7 +81,7 @@ function FlightList() {
                         11,
                         16
                       )}
-                      ,
+                      ,&nbsp;
                       <span className="blue">
                         {flight.flight.legs[0].segments[0].departureDate.slice(
                           0,
@@ -91,7 +98,17 @@ function FlightList() {
                     >
                       <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" />
                     </svg>
-                    <span>Время в пути</span>
+                    <span>
+                      {flight.flight.legs[0].segments[1]
+                        ? getTime(
+                            flight.flight.legs[0].segments[1].arrivalDate,
+                            flight.flight.legs[0].segments[0].departureDate
+                          )
+                        : getTime(
+                            flight.flight.legs[0].segments[0].arrivalDate,
+                            flight.flight.legs[0].segments[0].departureDate
+                          )}
+                    </span>
                   </div>
                   {flight.flight.legs[0].segments[1] ? (
                     <div className="time__finish">
@@ -115,7 +132,7 @@ function FlightList() {
                           10
                         )}
                       </span>
-                      ,
+                      ,&nbsp;
                       {flight.flight.legs[0].segments[0].arrivalDate.slice(
                         11,
                         16
@@ -126,11 +143,9 @@ function FlightList() {
                 {flight.flight.legs[0].segments[1] ? (
                   <p className="transfer">1 пересадка</p>
                 ) : (
-                  <p className="transfer"></p>
+                  <p className="transfer-empty"></p>
                 )}
-                <p className="aviaCompany">
-                  Рейс выполняет: {flight.flight.carrier.caption}
-                </p>
+                <p>Рейс выполняет: {flight.flight.carrier.caption}</p>
               </div>
               <div className="back">
                 <div className="direction">
@@ -195,7 +210,17 @@ function FlightList() {
                     >
                       <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" />
                     </svg>
-                    <span>Время в пути</span>
+                    <span>
+                      {flight.flight.legs[1].segments[1]
+                        ? getTime(
+                            flight.flight.legs[1].segments[1].arrivalDate,
+                            flight.flight.legs[1].segments[0].departureDate
+                          )
+                        : getTime(
+                            flight.flight.legs[1].segments[0].arrivalDate,
+                            flight.flight.legs[1].segments[0].departureDate
+                          )}
+                    </span>
                   </div>
                   {flight.flight.legs[1].segments[1] ? (
                     <div className="time__finish">
@@ -232,9 +257,7 @@ function FlightList() {
                 ) : (
                   <p className="transfer-empty"></p>
                 )}
-                <p className="aviaCompany">
-                  Рейс выполняет: {flight.flight.carrier.caption}
-                </p>
+                <p>Рейс выполняет: {flight.flight.carrier.caption}</p>
               </div>
             </div>
             <Button text="Выбрать" />

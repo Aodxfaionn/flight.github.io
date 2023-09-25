@@ -2,11 +2,10 @@ import React from "react";
 import "./aviaCompany.css";
 import { Checkbox } from "../../../../shared/ui/Checkbox/Checkbox";
 import data from "../../../../app/flights.json";
-import { useMadeUnicList } from "./lib/useMadeUnicList";
+import { useMadeUnicList } from "../lib/useMadeUnicList";
 
-function AviaCompany() {
+function AviaCompany({ handleCategoryChange }) {
   const unicCompany = useMadeUnicList(data.result.flights);
-
   return (
     <>
       <p className="panelChoose__name">Авиакомпании</p>
@@ -18,6 +17,7 @@ function AviaCompany() {
               name="aviaCompany"
               value={company.code}
               text={company.name}
+              onChange={handleCategoryChange}
             />
             <span className="aviaCompany__price">От {company.price} Р</span>
           </div>

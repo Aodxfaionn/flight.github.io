@@ -60,6 +60,7 @@
   align-items: center;
   gap: 10px;
   color: #ffb168;
+  text-align: center;
 }
 .transfer::before,
 .transfer::after {

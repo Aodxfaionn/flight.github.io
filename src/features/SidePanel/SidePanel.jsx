@@ -5,13 +5,13 @@ import Filtr from "./Filtr/Filtr";
 import Price from "./Price/Price";
 import AviaCompany from "./AviaCompany/ui/Aviacompany";
 
-function SidePanel() {
+function SidePanel({ handleSortChange, handlePriceRangeChange, handleCategoryChange }) {
   return (
     <div className="panelChoose">
-      <Sort />
-      <Filtr />
-      <Price />
-      <AviaCompany />
+      <Sort handleSortChange={handleSortChange} />
+      <Filtr handleCategoryChange={handleCategoryChange} />
+      <Price handlePriceRangeChange={handlePriceRangeChange} />
+      <AviaCompany handleCategoryChange={handleCategoryChange}/>
     </div>
   );
 }

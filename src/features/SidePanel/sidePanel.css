@@ -4,7 +4,13 @@
   flex-direction: column;
   gap: 20px;
 }
-
 .panelChoose__name {
   font-weight: bold;
+}
+@media (max-width: 767px) {
+  .panelChoose {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
